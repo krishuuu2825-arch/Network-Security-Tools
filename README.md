@@ -1,6 +1,8 @@
 # Autonomous Network Security & Reconnaissance Toolkit
 
-A production-ready repository containing lightweight, low-level Python automation utilities designed to execute passive network reconnaissance and socket service verification.
+A production-ready repository containing lightweight, low-level Python automation utilities designed to execute passive network reconnaissance, socket service verification, and localized intrusion triage parsing.
+
+---
 
 ## 1. TCP Multi-Port Auditing Utility (`network_recon_scanner.ipynb`)
 
@@ -11,9 +13,16 @@ This utility is a multi-port command-line diagnostic tool engineered to probe lo
 - **Low-Level Socket Programming:** Leverages the native Python `socket` API to establish raw structural requests over the internet layer via IPv4 address boundaries (`AF_INET`) using the TCP transport protocol layer (`SOCK_STREAM`).
 - **Non-Blocking Execution Strategy:** Utilizes the socket API's `connect_ex()` protocol. Instead of raising complex system-blocking runtime exceptions upon interacting with dropped packets or closed firewalls, the methodology intercepts the underlying kernel status code (`0` for clean handshakes).
 - **Latency Optimization Filters:** Configures strict socket timeout limits (`settimeout(2.0)`) across individual probes to prevent the parent environment runtime from locking permanently on unresponsive, firewalled, or heavily rate-limited host machines.
-- **Dynamic Sanitization Filters:** Employs runtime string processing engine blocks to scrub web architecture indicators (e.g., protocol prefixes like `https://` or deep subfolder trailing slashes) to enforce endpoint hostname stability during DNS resolution phases.
 
-### Executing the Architecture
-1. **Target Point Parsing:** Resolves alphanumeric domain inputs to dedicated IPv4 destinations via local network configuration parameters (`socket.gethostbyname`).
-2. **Array Traversal Audits:** Evaluates an initialized index array containing critical enterprise operational connection points (Secure Shell SSH, Simple Mail Protocol SMTP, Hypertext HTTP, Encrypted Web HTTPS, and Remote Desktop RDP).
-3. **State Evaluation Logging:** Parses connection criteria directly to command-line dashboards for immediate logging analysis.
+---
+
+## 2. Automated Log Parsing & Intrusion Detection System (`log_intrusion_detector.ipynb`)
+
+### Technical Overview
+An automated event data monitoring script built to simulate Security Information and Event Management (SIEM) pipeline mechanics. The system ingests standard unstructured server access audit trails, filters authentication discrepancies, maps risk distribution metrics, and identifies live automated password-spraying attacks.
+
+### Architectural Core Concepts & Implementation
+- **Dynamic File Ingestion:** Employs buffered file I/O operations (`with open()`) to read server logs line-by-line streaming context patterns smoothly without filling runtime computing memory overhead structures.
+- **Data Tokenization & Parsing:** Isolates discrete networking components out of string text rows via split configurations, isolating target elements such as unique source IPs (`IPv4 Pattern Map Extraction`).
+- **State Evaluation Arrays:** Manages persistent state counting maps using Hash Mapping / Python Dictionaries to log event totals dynamically per operational identifier across multi-line logs.
+- **Threshold Risk Aggregation Engine:** Dynamically measures counts against parameterized boundaries (`failure_threshold=3`) to automatically flag and differentiate normal user authorization mistakes from high-frequency brute-force dictionary attack scripts.
