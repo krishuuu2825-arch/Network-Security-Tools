@@ -1,6 +1,6 @@
-# Autonomous Network Security & Reconnaissance Toolkit
+# Autonomous Network Security, Reconnaissance & Cryptography Toolkit
 
-A production-ready repository containing lightweight, low-level Python automation utilities designed to execute passive network reconnaissance, socket service verification, and localized intrusion triage parsing.
+A production-ready repository containing lightweight, low-level Python automation utilities designed to execute passive network reconnaissance, localized intrusion triage parsing, and bitwise data payload obfuscation.
 
 ---
 
@@ -25,4 +25,16 @@ An automated event data monitoring script built to simulate Security Information
 - **Dynamic File Ingestion:** Employs buffered file I/O operations (`with open()`) to read server logs line-by-line streaming context patterns smoothly without filling runtime computing memory overhead structures.
 - **Data Tokenization & Parsing:** Isolates discrete networking components out of string text rows via split configurations, isolating target elements such as unique source IPs (`IPv4 Pattern Map Extraction`).
 - **State Evaluation Arrays:** Manages persistent state counting maps using Hash Mapping / Python Dictionaries to log event totals dynamically per operational identifier across multi-line logs.
-- **Threshold Risk Aggregation Engine:** Dynamically measures counts against parameterized boundaries (`failure_threshold=3`) to automatically flag and differentiate normal user authorization mistakes from high-frequency brute-force dictionary attack scripts.
+
+---
+
+## 3. Symmetric Payload Cryptography Engine (`network_crypto_engine.ipynb`)
+
+### Technical Overview
+A secure programmatic script implementing symmetric stream cipher logic to secure data packets during transit. The framework applies mathematical manipulation over raw ASCII value text elements to enforce cryptographic data confidentiality and integrity controls.
+
+### Architectural Core Concepts & Implementation
+- **Bitwise Algorithmic Transformations:** Implements custom algorithmic logic utilizing the native bitwise XOR (`^`) operator gate structure. This serves as a fundamental primer on the mechanics governing stream ciphers and modern block cipher initialization vectors.
+- **Dual-Phase Symmetric Reversibility:** Proves basic properties of symmetric cryptography systems—demonstrating that passing obfuscated ciphertext arrays back through the identical bitwise key space reconstructs the original payload block without structural data decay.
+- **ASCII Code Parsing Core:** Dynamically maps plain characters directly to native numerical memory addresses via the system's character-integer mapping core engines (`ord()` and `chr()`).
+- **Cryptographic Validation Gateways:** Integrates an automated validation check that dynamically cross-references input-output array spaces to guarantee cryptographic integrity across transformation cycles.
