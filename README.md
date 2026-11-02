@@ -1,17 +1,19 @@
-# Network Security Tools
+# Autonomous Network Security & Reconnaissance Toolkit
 
-A collection of lightweight, cloud-capable Python utilities developed to demonstrate foundational concepts in networking protocols, socket management, and defensive security.
+A production-ready repository containing lightweight, low-level Python automation utilities designed to execute passive network reconnaissance and socket service verification.
 
-## 1. TCP Port Scanner (`port_scanner.ipynb`)
-This script functions as a localized network reconnaissance utility. It maps active network services on a specified target host by systematically initiating TCP socket connections.
+## 1. TCP Multi-Port Auditing Utility (`network_recon_scanner.ipynb`)
 
-### Key Features & Architecture
-- **Socket Programming:** Leverages Python’s native `socket` library to manage low-level network connections over IPv4 (`AF_INET`) and TCP (`SOCK_STREAM`).
-- **Performance Tuning:** Implements a strict `settimeout(2.0)` condition on each probe. This prevents the cloud container from hanging indefinitely on heavily filtered or dead ports.
-- **Graceful Error Handling:** Employs `try-except` blocks to handle network connectivity disruptions and unresolvable hostnames (`socket.gaierror`) dynamically.
-- **Non-Disruptive Auditing:** Utilizes the `connect_ex()` method, which returns an integer error indicator rather than raising an execution exception, keeping network sweeps clean and lightweight.
+### Technical Overview
+This utility is a multi-port command-line diagnostic tool engineered to probe localized and public-facing network endpoints. It maps open entry points, diagnoses server availability, and parses domain entries back to basic IPv4 targets.
 
-### How It Works
-1. Resolves a target domain name (e.g., `scanme.nmap.org`) into an IP address.
-2. Loops through a target array of common service ports (22 for SSH, 80 for HTTP, 443 for HTTPS).
-3. Evaluates if the port responds to a TCP handshake (`0` indicates an open state).
+### Architectural Core Concepts & Implementation
+- **Low-Level Socket Programming:** Leverages the native Python `socket` API to establish raw structural requests over the internet layer via IPv4 address boundaries (`AF_INET`) using the TCP transport protocol layer (`SOCK_STREAM`).
+- **Non-Blocking Execution Strategy:** Utilizes the socket API's `connect_ex()` protocol. Instead of raising complex system-blocking runtime exceptions upon interacting with dropped packets or closed firewalls, the methodology intercepts the underlying kernel status code (`0` for clean handshakes).
+- **Latency Optimization Filters:** Configures strict socket timeout limits (`settimeout(2.0)`) across individual probes to prevent the parent environment runtime from locking permanently on unresponsive, firewalled, or heavily rate-limited host machines.
+- **Dynamic Sanitization Filters:** Employs runtime string processing engine blocks to scrub web architecture indicators (e.g., protocol prefixes like `https://` or deep subfolder trailing slashes) to enforce endpoint hostname stability during DNS resolution phases.
+
+### Executing the Architecture
+1. **Target Point Parsing:** Resolves alphanumeric domain inputs to dedicated IPv4 destinations via local network configuration parameters (`socket.gethostbyname`).
+2. **Array Traversal Audits:** Evaluates an initialized index array containing critical enterprise operational connection points (Secure Shell SSH, Simple Mail Protocol SMTP, Hypertext HTTP, Encrypted Web HTTPS, and Remote Desktop RDP).
+3. **State Evaluation Logging:** Parses connection criteria directly to command-line dashboards for immediate logging analysis.
